@@ -1,0 +1,56 @@
+[gd_scene load_steps=9 format=3 uid="uid://dei2wdfhp8q2b"]
+
+[ext_resource type="Script" path="res://src/scripts/snake.gd" id="1_804pb"]
+[ext_resource type="Texture2D" uid="uid://dlp1avpdymmjp" path="res://assets/sprites/tilemap-characters.png" id="1_n6fvv"]
+[ext_resource type="Resource" uid="uid://badctct5o3vu5" path="res://assets/data/snake_data.tres" id="2_ht2fu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fxkbm"]
+atlas = ExtResource("1_n6fvv")
+region = Rect2(150, 25, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e2gab"]
+atlas = ExtResource("1_n6fvv")
+region = Rect2(175, 25, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rhh45"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fxkbm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e2gab")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6soj4"]
+size = Vector2(7, 13)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sgadn"]
+size = Vector2(11, 13)
+
+[node name="Snake" type="CharacterBody2D"]
+script = ExtResource("1_804pb")
+snake_data = ExtResource("2_ht2fu")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(12, 24)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_rhh45")
+animation = &"walk"
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(11.5, 17.5)
+shape = SubResource("RectangleShape2D_6soj4")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(11.5, 16.5)
+shape = SubResource("RectangleShape2D_sgadn")

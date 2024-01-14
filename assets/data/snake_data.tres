@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ActorResource" load_steps=2 format=3 uid="uid://badctct5o3vu5"]
+
+[ext_resource type="Script" path="res://src/scripts/actor_resource.gd" id="1_cuy34"]
+
+[resource]
+script = ExtResource("1_cuy34")
+type = "Actor"
+name = "snake"
+speed = 50
+acceleration = 800
+friction = 1000
+jump_height = 50.0
+jump_time_to_peak = 0.3
+jump_time_to_descent = 0.3

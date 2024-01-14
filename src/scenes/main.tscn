@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://uopf268cp80o"]
+[gd_scene load_steps=4 format=3 uid="uid://uopf268cp80o"]
 
 [ext_resource type="PackedScene" uid="uid://dwrhix8608kmt" path="res://src/scenes/player.tscn" id="1_rpb8a"]
 [ext_resource type="PackedScene" uid="uid://cb6jqelqvy4nv" path="res://src/scenes/platform.tscn" id="2_eck2m"]
+[ext_resource type="PackedScene" uid="uid://dei2wdfhp8q2b" path="res://src/scenes/snake.tscn" id="3_vl1bj"]
 
 [node name="Main" type="Node2D"]
 
@@ -12,12 +13,14 @@ drag_vertical_enabled = true
 drag_horizontal_offset = 0.2
 drag_vertical_offset = 0.2
 
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Camera2D"]
-remote_path = NodePath("../../ActorsContainer/Player")
-
 [node name="ActorsContainer" type="Node2D" parent="."]
 
 [node name="Player" parent="ActorsContainer" instance=ExtResource("1_rpb8a")]
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="ActorsContainer/Player"]
+remote_path = NodePath("../../../Camera2D")
+
+[node name="Snake" parent="ActorsContainer" instance=ExtResource("3_vl1bj")]
 
 [node name="SolidsContainer" type="Node2D" parent="."]
 
