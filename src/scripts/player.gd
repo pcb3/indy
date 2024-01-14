@@ -6,7 +6,7 @@ extends CharacterBody2D
 @onready var jump_velocity : float = ((2.0 * player_data.jump_height) / player_data.jump_time_to_peak) * -1.0
 @onready var jump_gravity : float = ((-2.0 * player_data.jump_height) / (player_data.jump_time_to_peak * player_data.jump_time_to_peak)) * -1.0
 @onready var fall_gravity : float = ((-2.0 * player_data.jump_height) / (player_data.jump_time_to_descent * player_data.jump_time_to_descent)) * -1.0
-
+@onready var animated_sprite = $AnimatedSprite2D
 
 
 func _physics_process(delta):
@@ -28,7 +28,7 @@ func _physics_process(delta):
 
 	move_and_slide()
 
-	#if Input.is_action_just_pressed("right"):
-		#sprite.flip_h = true
-	#if Input.is_action_just_pressed("left"):
-		#sprite.flip_h = false
+	if Input.is_action_just_pressed("right"):
+		animated_sprite.flip_h = true
+	if Input.is_action_just_pressed("left"):
+		animated_sprite.flip_h = false

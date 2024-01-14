@@ -6,9 +6,9 @@
 script = ExtResource("1_3evkw")
 type = "Player"
 name = "player"
-speed = 200
-acceleration = 800
-friction = 1000
-jump_height = 800.0
-jump_time_to_peak = 0.5
-jump_time_to_descent = 0.4
+speed = 300
+acceleration = 1200
+friction = 2500
+jump_height = 100.0
+jump_time_to_peak = 0.35
+jump_time_to_descent = 0.29

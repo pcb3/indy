@@ -1,7 +1,118 @@
-[gd_scene load_steps=2 format=3 uid="uid://uopf268cp80o"]
+[gd_scene load_steps=3 format=3 uid="uid://uopf268cp80o"]
 
 [ext_resource type="PackedScene" uid="uid://dwrhix8608kmt" path="res://src/scenes/player.tscn" id="1_rpb8a"]
+[ext_resource type="PackedScene" uid="uid://cb6jqelqvy4nv" path="res://src/scenes/platform.tscn" id="2_eck2m"]
 
 [node name="Main" type="Node2D"]
 
-[node name="Player" parent="." instance=ExtResource("1_rpb8a")]
+[node name="Camera2D" type="Camera2D" parent="."]
+position_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_horizontal_offset = 0.2
+drag_vertical_offset = 0.2
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Camera2D"]
+remote_path = NodePath("../../ActorsContainer/Player")
+
+[node name="ActorsContainer" type="Node2D" parent="."]
+
+[node name="Player" parent="ActorsContainer" instance=ExtResource("1_rpb8a")]
+
+[node name="SolidsContainer" type="Node2D" parent="."]
+
+[node name="Platform" parent="SolidsContainer" instance=ExtResource("2_eck2m")]
+position = Vector2(1, 161)
+
+[node name="Platform2" parent="SolidsContainer" instance=ExtResource("2_eck2m")]
+position = Vector2(19, 161)
+
+[node name="Platform3" parent="SolidsContainer" instance=ExtResource("2_eck2m")]
+position = Vector2(37, 161)
+
+[node name="Platform4" parent="SolidsContainer" instance=ExtResource("2_eck2m")]
+position = Vector2(55, 161)
+
+[node name="Platform5" parent="SolidsContainer" instance=ExtResource("2_eck2m")]
+position = Vector2(73, 161)
+
+[node name="Platform6" parent="SolidsContainer" instance=ExtResource("2_eck2m")]
+position = Vector2(91, 161)
+
+[node name="Platform7" parent="SolidsContainer" instance=ExtResource("2_eck2m")]
+position = Vector2(109, 161)
+
+[node name="Platform8" parent="SolidsContainer" instance=ExtResource("2_eck2m")]
+position = Vector2(127, 161)
+
+[node name="Platform9" parent="SolidsContainer" instance=ExtResource("2_eck2m")]
+position = Vector2(145, 161)
+
+[node name="Platform10" parent="SolidsContainer" instance=ExtResource("2_eck2m")]
+position = Vector2(163, 161)
+
+[node name="Platform11" parent="SolidsContainer" instance=ExtResource("2_eck2m")]
+position = Vector2(181, 161)
+
+[node name="Platform12" parent="SolidsContainer" instance=ExtResource("2_eck2m")]
+position = Vector2(199, 161)
+
+[node name="Platform13" parent="SolidsContainer" instance=ExtResource("2_eck2m")]
+position = Vector2(217, 161)
+
+[node name="Platform14" parent="SolidsContainer" instance=ExtResource("2_eck2m")]
+position = Vector2(235, 161)
+
+[node name="Platform15" parent="SolidsContainer" instance=ExtResource("2_eck2m")]
+position = Vector2(253, 161)
+
+[node name="Platform16" parent="SolidsContainer" instance=ExtResource("2_eck2m")]
+position = Vector2(271, 161)
+
+[node name="Platform17" parent="SolidsContainer" instance=ExtResource("2_eck2m")]
+position = Vector2(-287, 161)
+
+[node name="Platform18" parent="SolidsContainer" instance=ExtResource("2_eck2m")]
+position = Vector2(-269, 161)
+
+[node name="Platform19" parent="SolidsContainer" instance=ExtResource("2_eck2m")]
+position = Vector2(-251, 161)
+
+[node name="Platform20" parent="SolidsContainer" instance=ExtResource("2_eck2m")]
+position = Vector2(-233, 161)
+
+[node name="Platform21" parent="SolidsContainer" instance=ExtResource("2_eck2m")]
+position = Vector2(-215, 161)
+
+[node name="Platform22" parent="SolidsContainer" instance=ExtResource("2_eck2m")]
+position = Vector2(-197, 161)
+
+[node name="Platform23" parent="SolidsContainer" instance=ExtResource("2_eck2m")]
+position = Vector2(-179, 161)
+
+[node name="Platform24" parent="SolidsContainer" instance=ExtResource("2_eck2m")]
+position = Vector2(-161, 161)
+
+[node name="Platform25" parent="SolidsContainer" instance=ExtResource("2_eck2m")]
+position = Vector2(-143, 161)
+
+[node name="Platform26" parent="SolidsContainer" instance=ExtResource("2_eck2m")]
+position = Vector2(-125, 161)
+
+[node name="Platform27" parent="SolidsContainer" instance=ExtResource("2_eck2m")]
+position = Vector2(-107, 161)
+
+[node name="Platform28" parent="SolidsContainer" instance=ExtResource("2_eck2m")]
+position = Vector2(-89, 161)
+
+[node name="Platform29" parent="SolidsContainer" instance=ExtResource("2_eck2m")]
+position = Vector2(-71, 161)
+
+[node name="Platform30" parent="SolidsContainer" instance=ExtResource("2_eck2m")]
+position = Vector2(-53, 161)
+
+[node name="Platform31" parent="SolidsContainer" instance=ExtResource("2_eck2m")]
+position = Vector2(-35, 161)
+
+[node name="Platform32" parent="SolidsContainer" instance=ExtResource("2_eck2m")]
+position = Vector2(-17, 161)

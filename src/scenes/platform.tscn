@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://cb6jqelqvy4nv"]
+
+[ext_resource type="Script" path="res://src/scripts/platform.gd" id="1_4qblv"]
+[ext_resource type="Texture2D" uid="uid://cgjy6rq8goelt" path="res://assets/sprites/tilemap.png" id="2_pefdq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ycxxu"]
+size = Vector2(18, 18)
+
+[node name="Platform" type="StaticBody2D"]
+collision_layer = 7
+script = ExtResource("1_4qblv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_pefdq")
+centered = false
+region_enabled = true
+region_rect = Rect2(132, 37, 20, 20)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(10, 10)
+shape = SubResource("RectangleShape2D_ycxxu")
