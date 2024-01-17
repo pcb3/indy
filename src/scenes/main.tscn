@@ -7,6 +7,7 @@
 [node name="Main" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(68, 137)
 position_smoothing_enabled = true
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
@@ -16,11 +17,13 @@ drag_vertical_offset = 0.2
 [node name="ActorsContainer" type="Node2D" parent="."]
 
 [node name="Player" parent="ActorsContainer" instance=ExtResource("1_rpb8a")]
+position = Vector2(68, 137)
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="ActorsContainer/Player"]
 remote_path = NodePath("../../../Camera2D")
 
 [node name="Snake" parent="ActorsContainer" instance=ExtResource("3_vl1bj")]
+position = Vector2(168, 135)
 
 [node name="SolidsContainer" type="Node2D" parent="."]
 

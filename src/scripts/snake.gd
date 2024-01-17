@@ -6,21 +6,15 @@ extends Actor
 @onready var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var edge_checker = $RayCast2D
 
-var direction := 1
+var direction = Vector2.RIGHT
 
 func _physics_process(delta: float) -> void:
+	velocity.y += gravity * delta	
+	var found_ledge = not edge_checker.is_colliding()
 	
-	velocity.y += gravity * delta
-	
-	if direction > 0:
-		velocity.x = move_toward(velocity.x, direction * snake_data.speed, snake_data.acceleration * delta)
-	else:
-		velocity.x = move_toward(velocity.x, direction * snake_data.speed, snake_data.acceleration * delta)
+	if found_ledge:
+		direction *= -1
+
+	velocity = snake_data.speed * direction
 	
 	move_and_slide()
-
-	if edge_checker.get_collider() == null:
-		print("null detected")
-	else:
-		direction *= -1
-		animated_sprite.flip_h = true
