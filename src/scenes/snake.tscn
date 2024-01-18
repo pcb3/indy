@@ -33,6 +33,7 @@ size = Vector2(13, 13)
 size = Vector2(11, 13)
 
 [node name="Snake" type="CharacterBody2D"]
+collision_layer = 4
 script = ExtResource("1_804pb")
 snake_data = ExtResource("2_ht2fu")
 
@@ -51,6 +52,16 @@ shape = SubResource("RectangleShape2D_6soj4")
 position = Vector2(11.5, 16.5)
 shape = SubResource("RectangleShape2D_sgadn")
 
-[node name="RayCast2D" type="RayCast2D" parent="."]
+[node name="EdgeCheck" type="RayCast2D" parent="."]
 position = Vector2(12, 22)
+target_position = Vector2(2.08165e-12, 10)
+
+[node name="WallCheckRight" type="RayCast2D" parent="."]
+position = Vector2(18, 18)
+rotation = 4.71239
+target_position = Vector2(2.08165e-12, 10)
+
+[node name="WallCheckLeft" type="RayCast2D" parent="."]
+position = Vector2(5, 18)
+rotation = 1.5708
 target_position = Vector2(2.08165e-12, 10)
