@@ -23,7 +23,7 @@ position = Vector2(68, 137)
 remote_path = NodePath("../../../Camera2D")
 
 [node name="Snake" parent="ActorsContainer" instance=ExtResource("3_vl1bj")]
-position = Vector2(-42, 135)
+position = Vector2(-95, 94)
 
 [node name="SolidsContainer" type="Node2D" parent="."]
 
@@ -76,7 +76,7 @@ position = Vector2(253, 161)
 position = Vector2(271, 161)
 
 [node name="Platform17" parent="SolidsContainer" instance=ExtResource("2_eck2m")]
-position = Vector2(206, 142)
+position = Vector2(285, 93)
 
 [node name="Platform18" parent="SolidsContainer" instance=ExtResource("2_eck2m")]
 position = Vector2(-179, 143)
