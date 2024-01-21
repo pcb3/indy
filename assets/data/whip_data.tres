@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://cvro3nkjfmraa"]
+
+[ext_resource type="Script" path="res://src/scripts/item_resource.gd" id="1_ip82i"]
+
+[resource]
+script = ExtResource("1_ip82i")
+type = "weapon"
+name = "whip"
+quantity = -1
+damage = 1
+equipped = true

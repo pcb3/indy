@@ -1,6 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://deg1v1cviwj6n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yfi0b"]
+size = Vector2(18, 6)
 
 [node name="HitBox" type="Area2D"]
 

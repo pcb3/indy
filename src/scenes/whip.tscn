@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://tfkakitu8ruf"]
+
+[ext_resource type="Texture2D" uid="uid://cgjy6rq8goelt" path="res://assets/sprites/tilemap.png" id="1_rgrbr"]
+[ext_resource type="PackedScene" uid="uid://deg1v1cviwj6n" path="res://src/scenes/hit_box.tscn" id="2_84ohx"]
+
+[node name="Whip" type="Area2D"]
+collision_layer = 0
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_rgrbr")
+centered = false
+region_enabled = true
+region_rect = Rect2(209, 81, 19, 8)
+
+[node name="HitBox" parent="." instance=ExtResource("2_84ohx")]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" parent="HitBox" index="0"]
+position = Vector2(9, 4)
+
+[editable path="HitBox"]

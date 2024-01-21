@@ -2,7 +2,6 @@ class_name Player
 extends CharacterBody2D
 
 @export var player_data : ActorResource
-
 @onready var jump_velocity : float = ((2.0 * player_data.jump_height) / player_data.jump_time_to_peak) * -1.0
 @onready var jump_gravity : float = ((-2.0 * player_data.jump_height) / (player_data.jump_time_to_peak * player_data.jump_time_to_peak)) * -1.0
 @onready var fall_gravity : float = ((-2.0 * player_data.jump_height) / (player_data.jump_time_to_descent * player_data.jump_time_to_descent)) * -1.0
@@ -32,3 +31,8 @@ func _physics_process(delta):
 		animated_sprite.flip_h = true
 	if Input.is_action_just_pressed("left"):
 		animated_sprite.flip_h = false
+
+
+func _on_hurt_box_body_entered(body: Node2D) -> void:
+	print("player hit")
+	#queue_free()

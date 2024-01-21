@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://6f3ow1scj1tb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pfuex"]
-size = Vector2(15, 9)
+size = Vector2(14.75, 13.75)
 
 [node name="HurtBox" type="Area2D"]
 

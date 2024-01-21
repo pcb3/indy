@@ -28,7 +28,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6soj4"]
-size = Vector2(13, 12)
+size = Vector2(11, 12)
 
 [node name="Snake" type="CharacterBody2D"]
 collision_layer = 4
@@ -51,21 +51,22 @@ position = Vector2(12, 22)
 target_position = Vector2(2.08165e-12, 10)
 
 [node name="WallCheckRight" type="RayCast2D" parent="."]
-position = Vector2(18, 18)
+position = Vector2(13, 18)
 rotation = 4.71239
-target_position = Vector2(2.08165e-12, 10)
+target_position = Vector2(2.08165e-12, 5)
 
 [node name="WallCheckLeft" type="RayCast2D" parent="."]
-position = Vector2(5, 18)
+visible = false
+position = Vector2(10, 18)
 rotation = 1.5708
-target_position = Vector2(2.08165e-12, 10)
+target_position = Vector2(2.08165e-12, 5)
 
 [node name="HurtBox" parent="." instance=ExtResource("4_2rh82")]
-collision_layer = 4
-collision_mask = 0
+collision_layer = 0
+collision_mask = 2
 
 [node name="CollisionShape2D" parent="HurtBox" index="0"]
-position = Vector2(11.5, 17.25)
+position = Vector2(11.625, 17.25)
 
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
 

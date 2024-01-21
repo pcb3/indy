@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_cuy34")
-type = "Actor"
+type = "enemy"
 name = "snake"
 speed = 100
 acceleration = 800
