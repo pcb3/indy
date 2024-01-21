@@ -6,6 +6,7 @@ extends Actor
 @onready var edge_check = $EdgeCheck
 @onready var wall_check_right = $WallCheckRight
 @onready var wall_check_left = $WallCheckLeft
+@onready var hurt_box = $HurtBox
 
 var direction = 1
 var grounded = false
@@ -27,5 +28,7 @@ func _physics_process(delta: float) -> void:
 	velocity.x = snake_data.speed * direction
 	
 	move_and_slide()
-	
-	
+
+
+func _on_hurt_box_area_entered(area: Area2D) -> void:
+	print("hit detected")

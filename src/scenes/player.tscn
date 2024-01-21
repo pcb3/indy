@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://dwrhix8608kmt"]
+[gd_scene load_steps=11 format=3 uid="uid://dwrhix8608kmt"]
 
 [ext_resource type="Script" path="res://src/scripts/player.gd" id="1_lvn7v"]
 [ext_resource type="Resource" uid="uid://pyg63iqdhdg7" path="res://assets/data/player_data.tres" id="2_i4b4p"]
 [ext_resource type="Texture2D" uid="uid://dlp1avpdymmjp" path="res://assets/sprites/tilemap-characters.png" id="2_shjly"]
+[ext_resource type="PackedScene" uid="uid://6f3ow1scj1tb" path="res://src/scenes/hurt_box.tscn" id="4_cxl1u"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4yn43"]
 atlas = ExtResource("2_shjly")
@@ -65,3 +66,13 @@ centered = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(12, 14)
 shape = SubResource("RectangleShape2D_s4yb4")
+
+[node name="HurtBox" parent="." instance=ExtResource("4_cxl1u")]
+position = Vector2(12, 10)
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" parent="HurtBox" index="0"]
+position = Vector2(0, 2)
+
+[editable path="HurtBox"]

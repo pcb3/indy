@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://src/scripts/snake.gd" id="1_804pb"]
 [ext_resource type="Texture2D" uid="uid://dlp1avpdymmjp" path="res://assets/sprites/tilemap-characters.png" id="1_n6fvv"]
 [ext_resource type="Resource" uid="uid://badctct5o3vu5" path="res://assets/data/snake_data.tres" id="2_ht2fu"]
+[ext_resource type="PackedScene" uid="uid://6f3ow1scj1tb" path="res://src/scenes/hurt_box.tscn" id="4_2rh82"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fxkbm"]
 atlas = ExtResource("1_n6fvv")
@@ -27,14 +28,11 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6soj4"]
-size = Vector2(13, 13)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_sgadn"]
-size = Vector2(11, 13)
+size = Vector2(13, 12)
 
 [node name="Snake" type="CharacterBody2D"]
 collision_layer = 4
-collision_mask = 7
+collision_mask = 5
 script = ExtResource("1_804pb")
 snake_data = ExtResource("2_ht2fu")
 
@@ -44,14 +42,9 @@ animation = &"walk"
 centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(11.5, 17.5)
+visible = false
+position = Vector2(11.5, 17)
 shape = SubResource("RectangleShape2D_6soj4")
-
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(11.5, 16.5)
-shape = SubResource("RectangleShape2D_sgadn")
 
 [node name="EdgeCheck" type="RayCast2D" parent="."]
 position = Vector2(12, 22)
@@ -66,3 +59,14 @@ target_position = Vector2(2.08165e-12, 10)
 position = Vector2(5, 18)
 rotation = 1.5708
 target_position = Vector2(2.08165e-12, 10)
+
+[node name="HurtBox" parent="." instance=ExtResource("4_2rh82")]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" parent="HurtBox" index="0"]
+position = Vector2(11.5, 17.25)
+
+[connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
+
+[editable path="HurtBox"]
